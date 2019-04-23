@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+struct Snaps {
+    public let createdDate: String
+    public let imageURL: String
+    public let message: String
+}

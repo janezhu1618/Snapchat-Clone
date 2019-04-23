@@ -13,6 +13,12 @@
 		A599B09E2268EA1500615F4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A599B09D2268EA1500615F4B /* Assets.xcassets */; };
 		A599B0A12268EA1500615F4B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A599B09F2268EA1500615F4B /* LaunchScreen.storyboard */; };
 		A599B0A92268EA3700615F4B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A599B0A82268EA3700615F4B /* GoogleService-Info.plist */; };
+		A599B0AB2268F1D600615F4B /* SnapsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599B0AA2268F1D600615F4B /* SnapsTableViewController.swift */; };
+		A599B0AE2268F45500615F4B /* SelectPictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599B0AD2268F45500615F4B /* SelectPictureViewController.swift */; };
+		A599B0B02268F68100615F4B /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599B0AF2268F68100615F4B /* UIViewController+Alerts.swift */; };
+		A599B0B322692C1100615F4B /* Snaps.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599B0B222692C1100615F4B /* Snaps.swift */; };
+		A599B0BD226FA5CD00615F4B /* SelectReceiverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599B0BC226FA5CD00615F4B /* SelectReceiverTableViewController.swift */; };
+		A599B0BF226FA99900615F4B /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599B0BE226FA99900615F4B /* AuthService.swift */; };
 		F2F9B627604EF8EC58E242F9 /* Pods_Snapchat_Clone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 659E6B26111C42A9193F84A5 /* Pods_Snapchat_Clone.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +34,12 @@
 		A599B0A02268EA1500615F4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A599B0A22268EA1500615F4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A599B0A82268EA3700615F4B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A599B0AA2268F1D600615F4B /* SnapsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapsTableViewController.swift; sourceTree = "<group>"; };
+		A599B0AD2268F45500615F4B /* SelectPictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPictureViewController.swift; sourceTree = "<group>"; };
+		A599B0AF2268F68100615F4B /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alerts.swift"; sourceTree = "<group>"; };
+		A599B0B222692C1100615F4B /* Snaps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snaps.swift; sourceTree = "<group>"; };
+		A599B0BC226FA5CD00615F4B /* SelectReceiverTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectReceiverTableViewController.swift; sourceTree = "<group>"; };
+		A599B0BE226FA99900615F4B /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,15 +83,61 @@
 		A599B0952268EA1300615F4B /* Snapchat-Clone */ = {
 			isa = PBXGroup;
 			children = (
-				A599B0962268EA1300615F4B /* AppDelegate.swift */,
-				A599B0982268EA1300615F4B /* LoginViewController.swift */,
+				A599B0C0226FA99D00615F4B /* Firebase Services */,
+				A599B0B422692C1500615F4B /* Models */,
+				A599B0AC2268F33F00615F4B /* Controllers */,
+				A599B0B12268F6A900615F4B /* Extensions */,
+				A599B0B7226A019400615F4B /* Supporting Files */,
 				A599B09A2268EA1300615F4B /* Main.storyboard */,
-				A599B09D2268EA1500615F4B /* Assets.xcassets */,
-				A599B09F2268EA1500615F4B /* LaunchScreen.storyboard */,
 				A599B0A22268EA1500615F4B /* Info.plist */,
 				A599B0A82268EA3700615F4B /* GoogleService-Info.plist */,
 			);
 			path = "Snapchat-Clone";
+			sourceTree = "<group>";
+		};
+		A599B0AC2268F33F00615F4B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A599B0BC226FA5CD00615F4B /* SelectReceiverTableViewController.swift */,
+				A599B0982268EA1300615F4B /* LoginViewController.swift */,
+				A599B0AA2268F1D600615F4B /* SnapsTableViewController.swift */,
+				A599B0AD2268F45500615F4B /* SelectPictureViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A599B0B12268F6A900615F4B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A599B0AF2268F68100615F4B /* UIViewController+Alerts.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A599B0B422692C1500615F4B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A599B0B222692C1100615F4B /* Snaps.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A599B0B7226A019400615F4B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A599B0962268EA1300615F4B /* AppDelegate.swift */,
+				A599B09D2268EA1500615F4B /* Assets.xcassets */,
+				A599B09F2268EA1500615F4B /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A599B0C0226FA99D00615F4B /* Firebase Services */ = {
+			isa = PBXGroup;
+			children = (
+				A599B0BE226FA99900615F4B /* AuthService.swift */,
+			);
+			path = "Firebase Services";
 			sourceTree = "<group>";
 		};
 		C606720675833BC1795E1A73 /* Pods */ = {
@@ -170,14 +228,18 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Snapchat-Clone/Pods-Snapchat-Clone-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Toucan/Toucan.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toucan.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -214,8 +276,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A599B0AB2268F1D600615F4B /* SnapsTableViewController.swift in Sources */,
+				A599B0B322692C1100615F4B /* Snaps.swift in Sources */,
+				A599B0AE2268F45500615F4B /* SelectPictureViewController.swift in Sources */,
 				A599B0992268EA1300615F4B /* LoginViewController.swift in Sources */,
+				A599B0BD226FA5CD00615F4B /* SelectReceiverTableViewController.swift in Sources */,
+				A599B0B02268F68100615F4B /* UIViewController+Alerts.swift in Sources */,
 				A599B0972268EA1300615F4B /* AppDelegate.swift in Sources */,
+				A599B0BF226FA99900615F4B /* AuthService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

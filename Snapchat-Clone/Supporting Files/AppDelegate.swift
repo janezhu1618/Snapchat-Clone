@@ -14,9 +14,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    static var authservice = AuthService()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let _ = AppDelegate.authservice.getCurrentUser() {
+            let snapsVC = storyboard.instantiateViewController(withIdentifier: "SnapsNavigationController") as! UINavigationController
+            window?.rootViewController = snapsVC
+        } else {
+            let loginViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+            window?.rootViewController = loginViewController
+        }
+        window?.makeKeyAndVisible()
+        
         return true
     }
 

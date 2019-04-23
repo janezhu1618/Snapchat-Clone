@@ -13,25 +13,20 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var topButton: UIButton!
-    @IBOutlet weak var bottomButton: UIButton!
+    @IBOutlet weak var signInButton: UIButton!
     
     private var signupMode = false
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
     }
     
-    private func showAlert(alert: String) {
-        let alert = UIAlertController(title: "Error", message: alert, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-        present(alert, animated: true, completion: nil)
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
 
-    @IBAction func topButtonPressed(_ sender: UIButton) {
+    @IBAction func signInButtonPressed(_ sender: UIButton) {
         guard let email = emailTextField.text,
             let password = passwordTextField.text,
             !email.isEmpty,
@@ -57,17 +52,14 @@ class LoginViewController: UIViewController {
         }
     }
     
-    @IBAction func bottomButtonPressed(_ sender: UIButton) {
-        if signupMode {
-            // switch to log in
-            topButton.setTitle("Log In", for: .normal)
-            bottomButton.setTitle("Switch to Sign Up", for: .normal)
+    @IBAction func signInMethodSegmentedControl(_ sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 0 {
+            signupMode = false
+            signInButton.setTitle("Log In", for: .normal)
         } else {
-            // swtich to register
-            topButton.setTitle("Sign Up", for: .normal)
-            bottomButton.setTitle("Switch to Log In", for: .normal)
+            signupMode = true
+            signInButton.setTitle("Sign Up", for: .normal)
         }
-        signupMode = !signupMode
     }
 }
 
