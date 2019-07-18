@@ -13,5 +13,6 @@ pod 'Firebase/Storage'
 pod 'Firebase/Database'
 pod 'Firebase/Firestore'
 pod 'Toucan'
+pod 'SDWebImage'
 
 end

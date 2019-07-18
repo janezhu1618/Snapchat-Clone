@@ -18,6 +18,7 @@ class SelectPictureViewController: UIViewController {
     
     private var imagePicker: UIImagePickerController?
     private var imageAdded = false
+    private var imageName = NSUUID().uuidString
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,8 +47,7 @@ class SelectPictureViewController: UIViewController {
             !message.isEmpty else {
                 showAlert(alert: "Image and message cannot be empty.")
                 return }
-        //TODO: save photo and send to Firebase
-        let imageRef = Storage.storage().reference().child("images/\(NSUUID().uuidString).jpeg")
+        let imageRef = Storage.storage().reference().child("images/\(imageName).jpeg")
         let metadata = StorageMetadata()
         metadata.contentType = "image/jpg"
         let resizedImage = Toucan(image: image).resize(CGSize(width: 300, height: 300)).image
@@ -90,6 +90,8 @@ class SelectPictureViewController: UIViewController {
         if let downloadURL = sender as? String {
             if let selectVC = segue.destination as? SelectReceiverTableViewController {
                 selectVC.downloadURL = downloadURL
+                selectVC.snapDescription = messageTextField.text!
+                selectVC.imageName = imageName
             }
         }
     }

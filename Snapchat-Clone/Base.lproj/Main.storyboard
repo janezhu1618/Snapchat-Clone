@@ -129,6 +129,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="VEy-mE-YXe" kind="show" identifier="ViewSnapSegue" id="UdM-UM-cva"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iwe-BJ-h7k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -208,6 +211,48 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OHW-QP-HUV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2755" y="102"/>
+        </scene>
+        <!--View Snap View Controller-->
+        <scene sceneID="MOu-an-lQq">
+            <objects>
+                <viewController id="VEy-mE-YXe" customClass="ViewSnapViewController" customModule="Snapchat_Clone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mGq-aw-awf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f8q-dI-bK8">
+                                <rect key="frame" x="0.0" y="88" width="414" height="704"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label n dafjdlksafjkl dsajfk;sdajfkd s;ajfkds;afjdslka;djafl;djska;f" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0vm-Jg-Lh9">
+                                <rect key="frame" x="10" y="802" width="394" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="hFL-cz-g68"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="0vm-Jg-Lh9" firstAttribute="leading" secondItem="g3P-U1-3dD" secondAttribute="leading" constant="10" id="7fd-8x-PHu"/>
+                            <constraint firstItem="g3P-U1-3dD" firstAttribute="bottom" secondItem="0vm-Jg-Lh9" secondAttribute="bottom" constant="10" id="9Y5-Zo-Qsg"/>
+                            <constraint firstItem="g3P-U1-3dD" firstAttribute="trailing" secondItem="f8q-dI-bK8" secondAttribute="trailing" id="Cd9-HL-dox"/>
+                            <constraint firstItem="g3P-U1-3dD" firstAttribute="trailing" secondItem="0vm-Jg-Lh9" secondAttribute="trailing" constant="10" id="EoH-7e-cAI"/>
+                            <constraint firstItem="f8q-dI-bK8" firstAttribute="leading" secondItem="g3P-U1-3dD" secondAttribute="leading" id="gIn-xF-AW2"/>
+                            <constraint firstItem="f8q-dI-bK8" firstAttribute="top" secondItem="g3P-U1-3dD" secondAttribute="top" id="mdV-0G-4Cm"/>
+                            <constraint firstItem="0vm-Jg-Lh9" firstAttribute="top" secondItem="f8q-dI-bK8" secondAttribute="bottom" constant="10" id="mfp-jp-bS8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="g3P-U1-3dD"/>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionlabel" destination="0vm-Jg-Lh9" id="d0v-ks-AzT"/>
+                        <outlet property="snapImageView" destination="f8q-dI-bK8" id="bO1-DH-ihi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4bz-o0-Cji" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1884" y="791"/>
         </scene>
         <!--Select Receiver Table View Controller-->
         <scene sceneID="WtR-v5-9Zv">

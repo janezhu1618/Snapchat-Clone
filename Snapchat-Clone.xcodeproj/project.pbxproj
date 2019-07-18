@@ -21,6 +21,8 @@
 		A599B0BF226FA99900615F4B /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599B0BE226FA99900615F4B /* AuthService.swift */; };
 		A599B0C42270CBB200615F4B /* orbitron-light.otf in Resources */ = {isa = PBXBuildFile; fileRef = A599B0C32270CBB200615F4B /* orbitron-light.otf */; };
 		A5CEA27622E0F49F0087CC66 /* DBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CEA27522E0F49F0087CC66 /* DBService.swift */; };
+		A5CEA27822E0F8910087CC66 /* SnapUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CEA27722E0F8910087CC66 /* SnapUser.swift */; };
+		A5CEA27A22E0FF380087CC66 /* ViewSnapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CEA27922E0FF380087CC66 /* ViewSnapViewController.swift */; };
 		F2F9B627604EF8EC58E242F9 /* Pods_Snapchat_Clone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 659E6B26111C42A9193F84A5 /* Pods_Snapchat_Clone.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +46,8 @@
 		A599B0BE226FA99900615F4B /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		A599B0C32270CBB200615F4B /* orbitron-light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "orbitron-light.otf"; sourceTree = "<group>"; };
 		A5CEA27522E0F49F0087CC66 /* DBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBService.swift; sourceTree = "<group>"; };
+		A5CEA27722E0F8910087CC66 /* SnapUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapUser.swift; sourceTree = "<group>"; };
+		A5CEA27922E0FF380087CC66 /* ViewSnapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSnapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,10 +107,11 @@
 		A599B0AC2268F33F00615F4B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				A599B0BC226FA5CD00615F4B /* SelectReceiverTableViewController.swift */,
 				A599B0982268EA1300615F4B /* LoginViewController.swift */,
 				A599B0AA2268F1D600615F4B /* SnapsTableViewController.swift */,
 				A599B0AD2268F45500615F4B /* SelectPictureViewController.swift */,
+				A599B0BC226FA5CD00615F4B /* SelectReceiverTableViewController.swift */,
+				A5CEA27922E0FF380087CC66 /* ViewSnapViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -122,6 +127,7 @@
 		A599B0B422692C1500615F4B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A5CEA27722E0F8910087CC66 /* SnapUser.swift */,
 				A599B0B222692C1100615F4B /* Snaps.swift */,
 			);
 			path = Models;
@@ -239,6 +245,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/Toucan/Toucan.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
@@ -253,6 +260,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toucan.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
@@ -301,7 +309,9 @@
 				A599B0B02268F68100615F4B /* UIViewController+Alerts.swift in Sources */,
 				A599B0972268EA1300615F4B /* AppDelegate.swift in Sources */,
 				A599B0BF226FA99900615F4B /* AuthService.swift in Sources */,
+				A5CEA27822E0F8910087CC66 /* SnapUser.swift in Sources */,
 				A5CEA27622E0F49F0087CC66 /* DBService.swift in Sources */,
+				A5CEA27A22E0FF380087CC66 /* ViewSnapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
