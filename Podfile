@@ -10,6 +10,8 @@ target 'Snapchat-Clone' do
 pod 'Firebase/Core'
 pod 'Firebase/Auth'
 pod 'Firebase/Storage'
+pod 'Firebase/Database'
+pod 'Firebase/Firestore'
 pod 'Toucan'
 
 end

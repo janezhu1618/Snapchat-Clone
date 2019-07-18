@@ -17,6 +17,7 @@ class SelectPictureViewController: UIViewController {
     @IBOutlet weak var selectedPhotoImageView: UIImageView!
     
     private var imagePicker: UIImagePickerController?
+    private var imageAdded = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,43 +59,30 @@ class SelectPictureViewController: UIViewController {
                     
                 }
             }
-            uploadTask.observe(.failure) { (snapshot) in
-                //
-            }
-            uploadTask.observe(.pause) { (snapshot) in
-                //
-            }
-            uploadTask.observe(.progress) { (snapshot) in
-                //
-            }
-            uploadTask.observe(.resume) { (snapshot) in
-                //
-            }
+//            uploadTask.observe(.failure) { (snapshot) in
+//                //
+//            }
+//            uploadTask.observe(.pause) { (snapshot) in
+//                //
+//            }
+//            uploadTask.observe(.progress) { (snapshot) in
+//                //
+//            }
+//            uploadTask.observe(.resume) { (snapshot) in
+//                //
+//            }
             uploadTask.observe(.success) { (snapshot) in
                 //
                 imageRef.downloadURL(completion: { (url, error) in
                     if let error = error {
-                        print(error.localizedDescription)
+                        self.showAlert(alert: error.localizedDescription)
                     } else if let url = url {
                         self.performSegue(withIdentifier: "SelectReceiverSegueway", sender: url.absoluteString)
                     }
                 })
             }
         }
-//).putData(imageData, metadata: nil) { (metadata, error) in
-//                if let error = error {
-//                    self.showAlert(alert: error.localizedDescription)
-//                } else if let metadata = metadata {
-//                    metadata.storageReference?.downloadURL(completion: { (url, error) in
-//                        if let url = url {
-//                            self.performSegue(withIdentifier: "SelectReceiverSegueway", sender: url.absoluteString)
-//                        } else if let error = error {
-//                            print("error getting image url: \(error.localizedDescription)")
-//                        }
-//                    })
-//                }
-//            }
-        }
+}
     
 
     
@@ -116,6 +104,7 @@ extension SelectPictureViewController: UINavigationControllerDelegate, UIImagePi
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             selectedPhotoImageView.image = image
+            imageAdded = true
         }
         
         dismiss(animated: true, completion: nil)

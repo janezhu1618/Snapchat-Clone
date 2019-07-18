@@ -8,6 +8,8 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseDatabase
+import FirebaseFirestore
 
 class LoginViewController: UIViewController {
 
@@ -37,7 +39,12 @@ class LoginViewController: UIViewController {
             Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
                 if let error = error {
                     self.showAlert(alert: error.localizedDescription)
-                } else {
+                } else if let user = user {
+                    Database.database().reference()
+                        .child("users")
+                        .child(user.user.uid)
+                        .child("email").setValue(user.user.email)
+                    print(user.user.email ?? "")
                     self.performSegue(withIdentifier: "goToSnaps", sender: self)
                 }
             }
